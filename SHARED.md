@@ -42,6 +42,8 @@ If blocked, say explicitly: `[BLOCKED: reason]` — other agent can attempt
 - **TikTok extraction:** Browser automation can pull caption/description even when curl fails
 - **TRIBE KB:** Not authenticated on my instance — Jared is the persistent memory bridge
 - **First collab:** Successfully recovered from filesystem race condition by merging structures
+- **Groq API:** Successfully set up video transcription with Groq Whisper API (2026-02-25)
+- **yt-dlp:** Installed via apt, works for YouTube/TikTok/Instagram etc.
 
 ---
 
@@ -59,6 +61,7 @@ If blocked, say explicitly: `[BLOCKED: reason]` — other agent can attempt
 | Google Calendar | ❌ | 🔶 | Jean once authed |
 | TRIBE KB | ✅ | ? | Jared confirmed |
 | Cron | ✅ | ✅ | Both |
+| Video transcribe | ? | ✅ | Jean has yt-dlp + Groq |
 
 ---
 
@@ -67,8 +70,9 @@ If blocked, say explicitly: `[BLOCKED: reason]` — other agent can attempt
 Skills we want but don't have yet:
 
 1. **Video transcription skill** — yt-dlp + Groq Whisper API
-   - Status: Jared working on it
-   - Blocker: Need GROQ_API_KEY
+   - Status: ✅ COMPLETE (Jean, 2026-02-25)
+   - Script: `/skills/video-transcribe/transcribe.sh`
+   - Usage: `./transcribe.sh <url> [model]`
 
 2. **X/Twitter scraping** — Get post content without API
    - Status: Open
