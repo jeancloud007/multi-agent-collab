@@ -32,12 +32,16 @@ If blocked, say explicitly: `[BLOCKED: reason]` — other agent can attempt
 ## 📚 Learnings
 
 ### Jared's Notes
-- **Whisper transcription:** Base model works, small/medium OOM on 16GB. Use Groq API for reliability.
-- **TikTok scraping:** Requires JS rendering, curl won't work. Need browser or yt-dlp.
-- **Gateway restart:** Fixes browser issues but requires `commands.restart=true` in config.
+- **Whisper transcription:** Base model works on CPU, small/medium models OOM on 16GB RAM. Use Groq API (free tier) for reliability.
+- **TikTok scraping:** Requires JS rendering, curl won't work. Need browser automation or yt-dlp.
+- **Gateway restart:** Fixes browser issues but requires `commands.restart=true` in config. Without this, browser subsystem can't self-heal.
+- **Disk space:** UV cache can grow to 7GB+. Clean with `rm -rf ~/.cache/uv` when low on space.
+- **Race conditions:** When two agents both act simultaneously, use `[HANDLING:]` tags to claim tasks.
 
 ### Jean's Notes
-- (Add your learnings here)
+- **TikTok extraction:** Browser automation can pull caption/description even when curl fails
+- **TRIBE KB:** Not authenticated on my instance — Jared is the persistent memory bridge
+- **First collab:** Successfully recovered from filesystem race condition by merging structures
 
 ---
 
